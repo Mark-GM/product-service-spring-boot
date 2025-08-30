@@ -1,0 +1,9 @@
+services:
+  mongodb:
+    image: mongo:8.0.12@sha256:108c3c1646aa75e8f75361024ae3f90b2ba9d2ad6d442d042bdeb269ef8d15bf
+    container_name: mongodb-8.0.12
+    ports:
+      - "27017:27017"
+    env_file: .env
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
